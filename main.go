@@ -40,6 +40,6 @@ func main() {
 	diff := t2.Sub(t1)
 	fmt.Println("testMeee", diff)
 
-	DNSlookups("google.com", "8.8.8.8")
+	DNSlookups("gmail.com", "8.8.4.4")
 
 }
