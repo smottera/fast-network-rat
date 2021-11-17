@@ -46,12 +46,13 @@ func main() {
 }
 
 ////
+/*
 func GetAllEmployees(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	employees := []model.Employee{}
 	db.Find(&employees)
 	respondJSON(w, http.StatusOK, employees)
 }
-
+*/
 func CreateEmployee(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
 	employee := model.Employee{}
 
