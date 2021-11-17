@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net"
 	"time"
+	_"github.com/gorilla/mux"
 )
 
 func DNSlookups(url string, pointer string) {
@@ -42,4 +43,39 @@ func main() {
 
 	DNSlookups("gmail.com", "8.8.4.4")
 
+}
+
+////
+func GetAllEmployees(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	employees := []model.Employee{}
+	db.Find(&employees)
+	respondJSON(w, http.StatusOK, employees)
+}
+
+func CreateEmployee(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	employee := model.Employee{}
+
+	decoder := json.NewDecoder(r.Body)
+	if err := decoder.Decode(&employee); err != nil {
+		respondError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+	defer r.Body.Close()
+
+	if err := db.Save(&employee).Error; err != nil {
+		respondError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	respondJSON(w, http.StatusCreated, employee)
+}
+
+func GetEmployee(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+
+	name := vars["name"]
+	employee := getEmployeeOr404(db, name, w, r)
+	if employee == nil {
+		return
+	}
+	respondJSON(w, http.StatusOK, employee)
 }
