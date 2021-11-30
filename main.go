@@ -89,24 +89,3 @@ func main() {
 	DNSlookups("gmail.com", "8.8.4.4")
 
 }
-
-////
-////
-func GetAllEmployees(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	employees := []model.Employee{}
-	db.Find(&employees)
-	respondJSON(w, http.StatusOK, employees)
-}
-
-func GetEmployee(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-
-	name := vars["name"]
-	employee := getEmployeeOr404(db, name, w, r)
-	if employee == nil {
-		return
-	}
-	respondJSON(w, http.StatusOK, employee)
-}
-
-//get back to ebook prep
