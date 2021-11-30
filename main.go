@@ -6,8 +6,6 @@ import (
 	"net"
 	"net/http"
 	"time"
-
-	"github.com/gorilla/mux"
 )
 
 func CreateEmployee(db *gorm.DB, w http.ResponseWriter, r *http.Request) {
