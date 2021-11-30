@@ -45,10 +45,20 @@ func DNSlookups(url string, pointer string) {
 		fmt.Println(ns)
 	}
 
+	
 	mxRecords, _ := net.LookupMX(url)
 	for _, mx := range mxRecords {
 		fmt.Println(mx.Host, mx.Pref)
 	}
+}
+
+// ArticleHandler is a function handler
+func ArticleHandler(w http.ResponseWriter, r *http.Request) {
+	// mux.Vars returns all path parameters as a map
+	vars := mux.Vars(r)
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprintf(w, "Category is: %v\n", vars["category"])
+	fmt.Fprintf(w, "ID is: %v\n", vars["id"])
 }
 
 func traceIP() {
