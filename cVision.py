@@ -2,8 +2,6 @@ import numpy as np
 from tensorflow import keras
 from tensorflow.keras import layers
 
-def CNNRNNClassification():
-    pass
 
 def SimpleMNISTcovnet():
     # Model / data parameters
