@@ -12,6 +12,7 @@ import (
 )
 
 func check(e error) {
+	
 	if e != nil {
 		panic(e)
 	}
@@ -81,6 +82,6 @@ func main() {
 	//randomNumbers()
 	//shaHashes()
 
-	base64Encoding()
+	//base64Encoding()
 
 }
