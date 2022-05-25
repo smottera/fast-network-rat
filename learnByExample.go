@@ -1,3 +1,4 @@
+//versions of go, gRPC, protobuffers need to be compatible
 package main
 
 import (
