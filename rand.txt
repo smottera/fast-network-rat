@@ -1,0 +1,66 @@
+<div class="header">
+<div class = "logo"></div>
+<button mat-button [matMenuTriggerFor]="belowMenu">
+Solutions
+</button>
+<mat-menu #belowMenu="matMenu" yPosition="below">
+  <button mat-menu-item routerLink="solutions" routerLinkActive="active">3D Surveillance</button>
+  <button mat-menu-item routerLink="solutions" routerLinkActive="active">Autonomous Deliveries</button>
+  <button mat-menu-item routerLink="solutions" routerLinkActive="active">Drone Swarm Tech</button>
+  <button mat-menu-item routerLink="solutions" routerLinkActive="active">Drone Manufacturing</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="afterMenu">
+  Technology
+</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="technology" routerLinkActive="active">Superior Aircrafts</button>
+  <button mat-menu-item routerLink="technology" routerLinkActive="active">Top Notch Software</button>
+  <button mat-menu-item routerLink="technology" routerLinkActive="active">Helicopters vs Quadcopters</button>
+  <button mat-menu-item routerLink="technology" routerLinkActive="active">Mesh Network</button>
+  <button mat-menu-item routerLink="technology" routerLinkActive="active">Computer Vision</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="afterMenu2">Company</button>
+<mat-menu #afterMenu2="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="about" routerLinkActive="active">About</button>
+  <button mat-menu-item routerLink="about" routerLinkActive="active">Team</button>
+  <button mat-menu-item>Distributors and Partners</button>
+  <button mat-menu-item routerLink="contact" routerLinkActive="active">Contact Us</button>
+</mat-menu>
+
+
+</div>
+
+.header {
+    padding: 6px;
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 30px;
+  }
+
+  .logo {
+    position: fixed;
+    left: 0;
+    height: 100px;
+    width: 100px;
+  }
+  
+  --------------------------------------------
+  <div class="footer">
+    <p> Copyright &copy; 2021-2022 Mottera Automation Pvt Ltd  </p>
+  </div>
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:black;
+    color: white;
+    text-align: center;
+  }
+  
+  
+  
